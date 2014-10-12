@@ -11,9 +11,6 @@
 
 @interface AppDelegate ()
 
-@property (nonatomic, strong) SPTSession *session;
-@property (nonatomic, strong) SPTAudioStreamingController *player;
-
 @end
 
 @implementation AppDelegate
@@ -24,6 +21,7 @@ static NSString * const kTokenSwapURL = @"http://kwassa-spotify-token-swap.appsp
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
     
     // Create SPTAuth instance; create login URL and open it
     SPTAuth *auth = [SPTAuth defaultInstance];
@@ -36,8 +34,10 @@ static NSString * const kTokenSwapURL = @"http://kwassa-spotify-token-swap.appsp
     [application performSelector:@selector(openURL:)
                       withObject:loginURL afterDelay:0.1];
     
+    
     return YES;
 }
+
 
 // Handle auth callback
 -(BOOL)application:(UIApplication *)application
@@ -60,41 +60,13 @@ static NSString * const kTokenSwapURL = @"http://kwassa-spotify-token-swap.appsp
              }
              
              // Call the -playUsingSession: method to play a track
-             [self playUsingSession:session];
+             self.session = session;
+             //[self playUsingSession:session];
          }];
         return YES;
     }
     
     return NO;
-}
-
--(void)playUsingSession:(SPTSession *)session {
-    
-    // Create a new player if needed
-    if (self.player == nil) {
-        self.player = [SPTAudioStreamingController new];
-    }
-    
-    [self.player loginWithSession:session callback:^(NSError *error) {
-        
-        if (error != nil) {
-            NSLog(@"*** Enabling playback got error: %@", error);
-            return;
-        }
-        
-        [SPTRequest requestItemAtURI:[NSURL URLWithString:@"spotify:album:4L1HDyfdGIkACuygktO7T7"]
-                         withSession:nil
-                            callback:^(NSError *error, SPTAlbum *album) {
-                                
-                                if (error != nil) {
-                                    NSLog(@"*** Album lookup got error %@", error);
-                                    return;
-                                }
-                                [self.player playTrackProvider:album callback:nil];
-                                
-                            }];
-    }];
-    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

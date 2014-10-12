@@ -16,6 +16,7 @@
 		908D8AB719E4B500004C1DB6 /* kwassa_iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 908D8AB619E4B500004C1DB6 /* kwassa_iosTests.m */; };
 		908D8AC119E4B52B004C1DB6 /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908D8AC019E4B52B004C1DB6 /* Spotify.framework */; };
 		908D8AC319E6426E004C1DB6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908D8AC219E6426E004C1DB6 /* AVFoundation.framework */; };
+		90EBE25619EA869700528C11 /* ReviewsServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EBE25519EA869700528C11 /* ReviewsServices.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,8 @@
 		908D8AB619E4B500004C1DB6 /* kwassa_iosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = kwassa_iosTests.m; sourceTree = "<group>"; };
 		908D8AC019E4B52B004C1DB6 /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Spotify.framework; path = "../../ios-sdk-beta-5/Spotify.framework"; sourceTree = "<group>"; };
 		908D8AC219E6426E004C1DB6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		90EBE25419EA869700528C11 /* ReviewsServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewsServices.h; sourceTree = "<group>"; };
+		90EBE25519EA869700528C11 /* ReviewsServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewsServices.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +100,8 @@
 				908D8AA719E4B500004C1DB6 /* Images.xcassets */,
 				908D8AA919E4B500004C1DB6 /* LaunchScreen.xib */,
 				908D8A9A19E4B500004C1DB6 /* Supporting Files */,
+				90EBE25419EA869700528C11 /* ReviewsServices.h */,
+				90EBE25519EA869700528C11 /* ReviewsServices.m */,
 			);
 			path = "kwassa-ios";
 			sourceTree = "<group>";
@@ -228,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				908D8AA319E4B500004C1DB6 /* ViewController.m in Sources */,
+				90EBE25619EA869700528C11 /* ReviewsServices.m in Sources */,
 				908D8AA019E4B500004C1DB6 /* AppDelegate.m in Sources */,
 				908D8A9D19E4B500004C1DB6 /* main.m in Sources */,
 			);

@@ -10,6 +10,7 @@
 
 @interface ViewController : UIViewController
 
+- (IBAction)playAny:(id)sender;
 
 @end
 
