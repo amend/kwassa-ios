@@ -12,6 +12,10 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *artist;
 
+@property (weak, nonatomic) IBOutlet UILabel *album;
+
+@property (weak, nonatomic) IBOutlet UILabel *score;
+
 @property (weak, nonatomic) IBOutlet UIImageView *albumArtwork;
 
 @end

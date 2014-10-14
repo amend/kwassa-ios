@@ -45,8 +45,6 @@ NSArray *albumArtworkUrls;
         [albumArtworksM addObject:imageUrl];
     }
     albumArtworkUrls = [albumArtworksM copy];
-    
-    NSLog(@"exiting AlbumsCollectionViewController viewDidLoad");
 }
 
 #pragma mark - Collection View Data Sources
@@ -68,8 +66,68 @@ NSArray *albumArtworkUrls;
     cell.albumArtwork.image = image;
     
     cell.artist.text = albumReviews[indexPath.row][@"artist"];
+    cell.album.text = albumReviews[indexPath.row][@"album"];
+    cell.score.text = albumReviews[indexPath.row][@"score"];
     
     return cell;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    AlbumCell *cell = (AlbumCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    
+    if (session == nil) {
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        session = appDelegate.session;
+    }
+    
+    [SPTRequest performSearchWithQuery:albumReviews[indexPath.row][@"album"]
+                             queryType:SPTQueryTypeAlbum
+                                offset:0 session:session
+                              callback:^(NSError *error, SPTListPage *listPage) {
+                                  
+                                  NSURL *albumUri;
+                                  if (listPage.totalListLength > 0) {
+                                      NSLog(@"listPage.items count: %lu", (unsigned long)listPage.items.count);
+                                      SPTPartialAlbum *album = listPage.items[0];
+                                      albumUri = album.uri;
+                                      NSLog(@"uri: %@", albumUri);
+                                  }
+                                  
+                                  if (session == nil) {
+                                      AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+                                      session = appDelegate.session;
+                                  }
+                                  
+                                  [self playAlbum:albumUri usingSession:session];
+                              }];
+}
+
+-(void)playAlbum:(NSURL *)albumUri usingSession:(SPTSession *)session {
+    // Create a new player if needed
+    if (player == nil) {
+        player = [SPTAudioStreamingController new];
+    }
+    
+    [player loginWithSession:session callback:^(NSError *error) {
+        
+        if (error != nil) {
+            NSLog(@"*** Enabling playback got error: %@", error);
+            return;
+        }
+        
+        [SPTRequest requestItemAtURI:[NSURL URLWithString:[albumUri absoluteString]]
+                         withSession:nil
+                            callback:^(NSError *error, SPTAlbum *album) {
+                                
+                                if (error != nil) {
+                                    NSLog(@"*** Album lookup got error %@", error);
+                                    return;
+                                }
+                                [player playTrackProvider:album callback:nil];
+                                
+                            }];
+    }];
+
 }
 
 @end

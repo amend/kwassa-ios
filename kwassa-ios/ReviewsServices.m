@@ -74,7 +74,6 @@
     NSDictionary *jsonRes = [NSJSONSerialization JSONObjectWithData:dataReceived options:kNilOptions error:&error];
     if (error != nil) { NSLog(@"Error parsing JSON!");}
 
-    NSLog(@"success: %@", jsonRes[@"success"]);
     if (jsonRes[@"success"]) {
         NSArray* results = jsonRes[@"albums"];
         NSMutableArray *albumReviewsM = [[NSMutableArray alloc] init];
