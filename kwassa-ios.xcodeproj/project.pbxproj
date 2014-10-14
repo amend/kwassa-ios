@@ -17,6 +17,8 @@
 		908D8AC119E4B52B004C1DB6 /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908D8AC019E4B52B004C1DB6 /* Spotify.framework */; };
 		908D8AC319E6426E004C1DB6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908D8AC219E6426E004C1DB6 /* AVFoundation.framework */; };
 		90EBE25619EA869700528C11 /* ReviewsServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EBE25519EA869700528C11 /* ReviewsServices.m */; };
+		90EBE25919ECBB2900528C11 /* AlbumsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EBE25819ECBB2900528C11 /* AlbumsCollectionViewController.m */; };
+		90EBE25C19ECBEAA00528C11 /* AlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EBE25B19ECBEAA00528C11 /* AlbumCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,10 @@
 		908D8AC219E6426E004C1DB6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		90EBE25419EA869700528C11 /* ReviewsServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewsServices.h; sourceTree = "<group>"; };
 		90EBE25519EA869700528C11 /* ReviewsServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewsServices.m; sourceTree = "<group>"; };
+		90EBE25719ECBB2900528C11 /* AlbumsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumsCollectionViewController.h; sourceTree = "<group>"; };
+		90EBE25819ECBB2900528C11 /* AlbumsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumsCollectionViewController.m; sourceTree = "<group>"; };
+		90EBE25A19ECBEAA00528C11 /* AlbumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumCell.h; sourceTree = "<group>"; };
+		90EBE25B19ECBEAA00528C11 /* AlbumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,10 @@
 				908D8A9A19E4B500004C1DB6 /* Supporting Files */,
 				90EBE25419EA869700528C11 /* ReviewsServices.h */,
 				90EBE25519EA869700528C11 /* ReviewsServices.m */,
+				90EBE25719ECBB2900528C11 /* AlbumsCollectionViewController.h */,
+				90EBE25819ECBB2900528C11 /* AlbumsCollectionViewController.m */,
+				90EBE25A19ECBEAA00528C11 /* AlbumCell.h */,
+				90EBE25B19ECBEAA00528C11 /* AlbumCell.m */,
 			);
 			path = "kwassa-ios";
 			sourceTree = "<group>";
@@ -232,10 +242,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90EBE25919ECBB2900528C11 /* AlbumsCollectionViewController.m in Sources */,
 				908D8AA319E4B500004C1DB6 /* ViewController.m in Sources */,
 				90EBE25619EA869700528C11 /* ReviewsServices.m in Sources */,
 				908D8AA019E4B500004C1DB6 /* AppDelegate.m in Sources */,
 				908D8A9D19E4B500004C1DB6 /* main.m in Sources */,
+				90EBE25C19ECBEAA00528C11 /* AlbumCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

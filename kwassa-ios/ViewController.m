@@ -21,12 +21,14 @@
 
 SPTSession *session;
 SPTAudioStreamingController *player;
+NSMutableArray *albumArtworks;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
     self.reviewsServices = [[ReviewsServices alloc] init];
+    
 }
 
 
@@ -44,10 +46,23 @@ SPTAudioStreamingController *player;
     
     [self playUsingSession:session];
     
+    // populate albumReviews with reviews dictionarys
     NSArray *albumReviews = [[self reviewsServices] getBestAlbumReviewsByYear:@"2010"];
     for (int i = 0; i < albumReviews.count; i++) {
         NSLog(@"albumReviews[i]: %@", albumReviews[i][@"artist"]);
     }
+    
+    // albumArtworks will contain albumArtwork for each review
+    albumArtworks = [NSMutableArray array];
+    for (int i = 0; i < albumReviews.count; i++) {
+        NSString *imageUrl = albumReviews[i][@"images"][0][@"path"];
+        imageUrl = [imageUrl substringFromIndex:5];
+        imageUrl = [NSString stringWithFormat:@"%@%@", @"http://best-new-albums-artwork.s3-website-us-west-2.amazonaws.com/", imageUrl];
+        NSLog(@"imageUrl: %@", imageUrl);
+        [albumArtworks addObject:imageUrl];
+    }
+    
+    
     
     NSLog(@"about to exist playAny!");
 }
