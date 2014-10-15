@@ -1,11 +1,10 @@
 kwassa-ios
 ==========
 
-Lists albums from Pitchfork's Best New Albums. You can browse by year and check out the album's songs using Spotify's iOS dev api's. That's the plan anyway. It need some work. 
+Lists albums from Pitchfork's Best New Albums. You can browse by year and check out the album's songs using Spotify's iOS dev apis. That's the plan anyway. It need some work. 
 
 
 Quick rundown:
-
 AppDelegate authorizes a Spotify premium user and set up the token swap service. 
 
 AlbumsCollectionViewController has album lists. 
