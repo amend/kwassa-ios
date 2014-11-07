@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		905A57601A09E01900157DF9 /* BestNewAlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905A575F1A09E01900157DF9 /* BestNewAlbumsViewController.swift */; };
 		908D8A9D19E4B500004C1DB6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 908D8A9C19E4B500004C1DB6 /* main.m */; };
 		908D8AA019E4B500004C1DB6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 908D8A9F19E4B500004C1DB6 /* AppDelegate.m */; };
 		908D8AA319E4B500004C1DB6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 908D8AA219E4B500004C1DB6 /* ViewController.m */; };
@@ -32,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		905A575F1A09E01900157DF9 /* BestNewAlbumsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestNewAlbumsViewController.swift; sourceTree = "<group>"; };
+		905A57621A09ED4D00157DF9 /* kwassa-ios-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "kwassa-ios-Bridging-Header.h"; sourceTree = "<group>"; };
 		908D8A9719E4B500004C1DB6 /* kwassa-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "kwassa-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		908D8A9B19E4B500004C1DB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		908D8A9C19E4B500004C1DB6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -112,6 +115,8 @@
 				90EBE25819ECBB2900528C11 /* AlbumsCollectionViewController.m */,
 				90EBE25A19ECBEAA00528C11 /* AlbumCell.h */,
 				90EBE25B19ECBEAA00528C11 /* AlbumCell.m */,
+				905A575F1A09E01900157DF9 /* BestNewAlbumsViewController.swift */,
+				905A57621A09ED4D00157DF9 /* kwassa-ios-Bridging-Header.h */,
 			);
 			path = "kwassa-ios";
 			sourceTree = "<group>";
@@ -245,6 +250,7 @@
 				90EBE25919ECBB2900528C11 /* AlbumsCollectionViewController.m in Sources */,
 				908D8AA319E4B500004C1DB6 /* ViewController.m in Sources */,
 				90EBE25619EA869700528C11 /* ReviewsServices.m in Sources */,
+				905A57601A09E01900157DF9 /* BestNewAlbumsViewController.swift in Sources */,
 				908D8AA019E4B500004C1DB6 /* AppDelegate.m in Sources */,
 				908D8A9D19E4B500004C1DB6 /* main.m in Sources */,
 				90EBE25C19ECBEAA00528C11 /* AlbumCell.m in Sources */,
@@ -371,6 +377,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/andonimendoza/Development/kwassa/ios-sdk-beta-5",
@@ -379,6 +387,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "kwassa-ios/kwassa-ios-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -386,6 +396,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/andonimendoza/Development/kwassa/ios-sdk-beta-5",
@@ -394,6 +406,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "kwassa-ios/kwassa-ios-Bridging-Header.h";
 			};
 			name = Release;
 		};
