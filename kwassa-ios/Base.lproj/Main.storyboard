@@ -56,7 +56,7 @@
             <objects>
                 <collectionViewController id="c9Y-ow-SWR" customClass="AlbumsCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="v36-vD-2Jq">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="438"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eri-GZ-Iig">
                             <size key="itemSize" width="250" height="250"/>
@@ -112,12 +112,12 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cfm-c1-MOg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1649" y="270"/>
+            <point key="canvasLocation" x="1649" y="447"/>
         </scene>
         <!--Best New Albums View Controller-->
         <scene sceneID="wcu-Oa-EDG">
             <objects>
-                <viewController id="gwl-n4-Bzq" customClass="BestNewAlbumsViewController" customModule="kwassa_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gwl-n4-Bzq" customClass="BestNewAlbumsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="f7f-Ga-RXa"/>
                         <viewControllerLayoutGuide type="bottom" id="dGu-d5-UYF"/>
@@ -126,25 +126,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XD7-Wy-8np">
-                                <rect key="frame" x="0.0" y="28" width="600" height="162"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XD7-Wy-8np">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="4J4-Yx-ear"/>
+                                </constraints>
                             </pickerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mk0-Kp-bpN">
-                                <rect key="frame" x="180" y="288" width="240" height="128"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mk0-Kp-bpN">
+                                <rect key="frame" x="0.0" y="162" width="600" height="438"/>
                                 <connections>
                                     <segue destination="c9Y-ow-SWR" kind="embed" id="K38-SA-Y6S"/>
                                 </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T5H-gU-ptN">
+                                <rect key="frame" x="300" y="0.0" width="300" height="162"/>
+                                <state key="normal" title="Go">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="updateYear:" destination="gwl-n4-Bzq" eventType="touchUpInside" id="7GK-u0-nEJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XD7-Wy-8np" firstAttribute="width" secondItem="T5H-gU-ptN" secondAttribute="width" id="5YL-fZ-LBd"/>
+                            <constraint firstItem="XD7-Wy-8np" firstAttribute="height" secondItem="T5H-gU-ptN" secondAttribute="height" id="7aZ-Sz-1LO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="T5H-gU-ptN" secondAttribute="trailing" constant="-16" id="8y6-GG-asB"/>
+                            <constraint firstItem="T5H-gU-ptN" firstAttribute="leading" secondItem="XD7-Wy-8np" secondAttribute="trailing" id="9sV-Ze-GQn"/>
+                            <constraint firstItem="dGu-d5-UYF" firstAttribute="top" secondItem="mk0-Kp-bpN" secondAttribute="bottom" id="Abq-nI-rrk"/>
+                            <constraint firstItem="mk0-Kp-bpN" firstAttribute="top" secondItem="XD7-Wy-8np" secondAttribute="bottom" id="GB6-8N-x1u"/>
+                            <constraint firstItem="mk0-Kp-bpN" firstAttribute="leading" secondItem="SsI-Xy-9Mq" secondAttribute="leadingMargin" constant="-16" id="OJs-e7-UxL"/>
+                            <constraint firstItem="mk0-Kp-bpN" firstAttribute="top" secondItem="T5H-gU-ptN" secondAttribute="bottom" id="Pi7-iD-rt3"/>
+                            <constraint firstItem="T5H-gU-ptN" firstAttribute="leading" secondItem="XD7-Wy-8np" secondAttribute="trailing" id="URZ-Ww-1ZQ"/>
+                            <constraint firstItem="XD7-Wy-8np" firstAttribute="top" secondItem="SsI-Xy-9Mq" secondAttribute="topMargin" id="Wxh-ME-h5P"/>
+                            <constraint firstItem="T5H-gU-ptN" firstAttribute="top" secondItem="SsI-Xy-9Mq" secondAttribute="topMargin" id="XxV-S1-FEp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mk0-Kp-bpN" secondAttribute="trailing" constant="-16" id="ahK-8P-XTB"/>
+                            <constraint firstItem="XD7-Wy-8np" firstAttribute="leading" secondItem="SsI-Xy-9Mq" secondAttribute="leadingMargin" constant="-16" id="jfe-um-OjD"/>
+                            <constraint firstItem="mk0-Kp-bpN" firstAttribute="top" secondItem="T5H-gU-ptN" secondAttribute="bottom" id="n4L-WC-CO9"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="yearPicker" destination="XD7-Wy-8np" id="SLc-nd-VOF"/>
+                        <outlet property="yearPicker" destination="XD7-Wy-8np" id="Ge4-Qg-1bu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ofh-5s-wiX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1649" y="-320"/>
+            <point key="canvasLocation" x="1649" y="-296"/>
         </scene>
     </scenes>
 </document>

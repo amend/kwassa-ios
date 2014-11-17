@@ -28,12 +28,18 @@ NSArray *albumArtworkUrls;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     
+    // Do any additional setup after loading the view, typically from a nib.
     reviewsServices = [[ReviewsServices alloc] init];
     
+    [self setReviewInfo:@"2014"];
+
+}
+
+- (BOOL)setReviewInfo:(NSString*) year {
+    NSLog(@"setting review info for year: %@", year);
     // populate albumReviews with dictionaries of album review info
-    albumReviews = [reviewsServices getBestAlbumReviewsByYear:@"2010"];
+    albumReviews = [reviewsServices getBestAlbumReviewsByYear:year];
     
     // populate albumArtworkUrls with aws s3 link to image
     NSMutableArray *albumArtworksM = [NSMutableArray array];
@@ -45,6 +51,8 @@ NSArray *albumArtworkUrls;
         [albumArtworksM addObject:imageUrl];
     }
     albumArtworkUrls = [albumArtworksM copy];
+    
+    return true;
 }
 
 #pragma mark - Collection View Data Sources

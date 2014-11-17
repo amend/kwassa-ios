@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AlbumsCollectionViewController : UICollectionViewController <UICollectionViewDataSource, UICollectionViewDelegate> 
+@interface AlbumsCollectionViewController : UICollectionViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+
+- (BOOL)setReviewInfo:(NSString*) year;
 
 @end
