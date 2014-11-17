@@ -12,6 +12,11 @@
 #import <Spotify/Spotify.h>
 #include "AppDelegate.h"
 
+//#import <SDWebImage/UIImageView+WebCache.h>
+#import "UIImageView+WebCache.h"
+//#include "SDWebImage/UIImageView+WebCache.h"
+
+
 @interface AlbumsCollectionViewController ()
 
 @end
@@ -37,7 +42,6 @@ NSArray *albumArtworkUrls;
 }
 
 - (BOOL)setReviewInfo:(NSString*) year {
-    NSLog(@"setting review info for year: %@", year);
     // populate albumReviews with dictionaries of album review info
     albumReviews = [reviewsServices getBestAlbumReviewsByYear:year];
     
@@ -67,11 +71,15 @@ NSArray *albumArtworkUrls;
 {
     AlbumCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ALBUM_CELL" forIndexPath:indexPath];
     
-    // I suspect bc collection view, indexPath.section might have to be taken into consideration for indexing into albumArtworkUrls
-    // could probably do some maths. something index = row + section*10, if section is column
+    /*
     NSString *url = albumArtworkUrls[indexPath.row];
     UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:url]]];
     cell.albumArtwork.image = image;
+     */
+    
+    // Here we use the new provided setImageWithURL: method to load the web image
+    NSString *url = albumArtworkUrls[indexPath.row];
+    [cell.albumArtwork sd_setImageWithURL:[NSURL URLWithString:url]];
     
     cell.artist.text = albumReviews[indexPath.row][@"artist"];
     cell.album.text = albumReviews[indexPath.row][@"album"];
