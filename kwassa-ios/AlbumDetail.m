@@ -24,9 +24,16 @@ SPTAudioStreamingController *player;
 
 SPTAlbum *sptAlbum;
 
+NSMutableArray *tracks;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.tracksTableView.delegate = self;
+    self.tracksTableView.dataSource = self;
+    
+    tracks = [[NSMutableArray alloc] init];
 
     NSLog(@"AlbumDetail for artist: %@", self.artist);
     NSLog(@"AlbumDetail for album: %@", self.album);
@@ -53,11 +60,10 @@ SPTAlbum *sptAlbum;
                                            }
                                            
                                            sptAlbum = album;
-                                           //[self continueAlbumDetailSetup];
+                                           [self continueAlbumDetailSetup];
                                        }];
                                    }
      }];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,9 +77,11 @@ SPTAlbum *sptAlbum;
     // in one of the elses, call function that sorts tracks by tracknumber, and then set up table view and everything else
     
     // this will probably need to be debugged...
+
+    NSLog(@"in continueAlbumDetailsSetup");
     
     if (sptAlbum.firstTrackPage != nil) {
-        [self getTracksFromSPTListPage:sptAlbum.firstTrackPage];
+        [tracks addObjectsFromArray:sptAlbum.firstTrackPage.items];
     } else {
         NSLog(@"firstTrackPage was nil!");
     }
@@ -85,15 +93,13 @@ SPTAlbum *sptAlbum;
         }];
     } else {
         NSLog(@"did not have nextPage");
+        [self setUpTableView];
     }
-    
-    NSLog(@"in continueAlbumDetailsSetup");
+
 }
 
-// now add name, playable uri, and tracknumber to tracks
-// another function will sort on tracknumber when no more pages
-- (void)getTracksFromSPTListPage:(SPTListPage*) page {
-    NSLog(@"going to extract tracks");
+-(void)setUpTableView {
+    [self.tracksTableView reloadData];
 }
 
 /*
@@ -105,5 +111,26 @@ SPTAlbum *sptAlbum;
     // Pass the selected object to the new view controller.
 }
 */
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [tracks count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *simpleTableIdentifier = @"Track";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    }
+    
+    SPTPartialTrack* track = [tracks objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = track.name;
+    return cell;
+}
 
 @end

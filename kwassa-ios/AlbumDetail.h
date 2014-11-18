@@ -8,10 +8,12 @@
 
 #import "ViewController.h"
 
-@interface AlbumDetail : ViewController
+@interface AlbumDetail : ViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) NSString* artist;
-
 @property (weak, nonatomic) NSString* album;
+
+@property (weak, nonatomic) IBOutlet UITableView *tracksTableView;
+
 
 @end
