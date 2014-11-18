@@ -12,10 +12,8 @@
 #import <Spotify/Spotify.h>
 #include "AppDelegate.h"
 
-//#import <SDWebImage/UIImageView+WebCache.h>
 #import "UIImageView+WebCache.h"
-//#include "SDWebImage/UIImageView+WebCache.h"
-
+#import "AlbumDetail.h"
 
 @interface AlbumsCollectionViewController ()
 
@@ -71,13 +69,7 @@ NSArray *albumArtworkUrls;
 {
     AlbumCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ALBUM_CELL" forIndexPath:indexPath];
     
-    /*
-    NSString *url = albumArtworkUrls[indexPath.row];
-    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:url]]];
-    cell.albumArtwork.image = image;
-     */
-    
-    // Here we use the new provided setImageWithURL: method to load the web image
+    // Here we use the provided setImageWithURL: method to load the web image (from SDWebImage, async and cache)
     NSString *url = albumArtworkUrls[indexPath.row];
     [cell.albumArtwork sd_setImageWithURL:[NSURL URLWithString:url]];
     
@@ -89,8 +81,16 @@ NSArray *albumArtworkUrls;
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    /*
     AlbumCell *cell = (AlbumCell *)[collectionView cellForItemAtIndexPath:indexPath];
     
+    albumSelected = cell.album.text;
+    NSLog(@"*** gonna perform segue with albumSelected: %@", albumSelected);
+    NSLog(@"*** gonna perform segue with cell.album.text: %@", cell.album.text);
+    [self performSegueWithIdentifier:@"showAlbumDetail" sender:nil];
+     */
+    
+    /*
     if (session == nil) {
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         session = appDelegate.session;
@@ -116,6 +116,19 @@ NSArray *albumArtworkUrls;
                                   
                                   [self playAlbum:albumUri usingSession:session];
                               }];
+     */
+    
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"showAlbumDetail"]) {
+        NSIndexPath *indexPath = [[self.collectionView indexPathsForSelectedItems] objectAtIndex:0];
+        
+        AlbumDetail *albumDetail = [segue destinationViewController];
+        albumDetail.artist = albumReviews[indexPath.row][@"artist"];
+        albumDetail.album = albumReviews[indexPath.row][@"album"];
+    }
 }
 
 -(void)playAlbum:(NSURL *)albumUri usingSession:(SPTSession *)session {

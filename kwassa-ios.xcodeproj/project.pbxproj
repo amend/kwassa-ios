@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		904360641A1AE13600327FFF /* AlbumDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 904360631A1AE13600327FFF /* AlbumDetail.m */; };
 		904E687B1A1AA51700E34369 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 904E687A1A1AA51700E34369 /* ImageIO.framework */; };
 		908D8A9D19E4B500004C1DB6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 908D8A9C19E4B500004C1DB6 /* main.m */; };
 		908D8AA019E4B500004C1DB6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 908D8A9F19E4B500004C1DB6 /* AppDelegate.m */; };
@@ -50,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		904360621A1AE13600327FFF /* AlbumDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumDetail.h; sourceTree = "<group>"; };
+		904360631A1AE13600327FFF /* AlbumDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumDetail.m; sourceTree = "<group>"; };
 		904E687A1A1AA51700E34369 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		908D8A9719E4B500004C1DB6 /* kwassa-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "kwassa-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		908D8A9B19E4B500004C1DB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -171,6 +174,8 @@
 				90EBE25B19ECBEAA00528C11 /* AlbumCell.m */,
 				90AF343C1A186C660022F924 /* BestNewAlbumsViewController.h */,
 				90AF343D1A186C660022F924 /* BestNewAlbumsViewController.m */,
+				904360621A1AE13600327FFF /* AlbumDetail.h */,
+				904360631A1AE13600327FFF /* AlbumDetail.m */,
 			);
 			path = "kwassa-ios";
 			sourceTree = "<group>";
@@ -354,6 +359,7 @@
 				9092E09C1A1AC24E004C913F /* UIImage+WebP.m in Sources */,
 				90AF343E1A186C660022F924 /* BestNewAlbumsViewController.m in Sources */,
 				9092E0961A1AC24E004C913F /* SDWebImageDownloaderOperation.m in Sources */,
+				904360641A1AE13600327FFF /* AlbumDetail.m in Sources */,
 				9092E0941A1AC24E004C913F /* SDWebImageDecoder.m in Sources */,
 				908D8AA319E4B500004C1DB6 /* ViewController.m in Sources */,
 				9092E09D1A1AC24E004C913F /* UIImageView+HighlightedWebCache.m in Sources */,

@@ -67,8 +67,6 @@ NSString* yearSelected = @"2014";
 }
 
 - (IBAction)updateYear:(id)sender {
-    NSLog(@"in updateYear and yearSelected is: %@", yearSelected);
-    
     AlbumsCollectionViewController* albumsCollectionViewController = self.childViewControllers[0];
     [albumsCollectionViewController setReviewInfo:yearSelected];
     [albumsCollectionViewController.collectionView reloadData];

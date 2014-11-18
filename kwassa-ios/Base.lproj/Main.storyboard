@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gwl-n4-Bzq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gwl-n4-Bzq">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -101,6 +101,7 @@
                                     <outlet property="albumArtwork" destination="Nn2-BT-LSx" id="rIz-qU-ecI"/>
                                     <outlet property="artist" destination="d82-SI-s9n" id="G0H-z3-0kv"/>
                                     <outlet property="score" destination="8rT-GN-IZ6" id="Z7Y-va-4Pz"/>
+                                    <segue destination="Pm4-32-ztg" kind="show" identifier="showAlbumDetail" id="bgh-wl-Uf4"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -113,6 +114,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cfm-c1-MOg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1649" y="447"/>
+        </scene>
+        <!--Album Detail-->
+        <scene sceneID="1dJ-ZG-l9n">
+            <objects>
+                <viewController id="Pm4-32-ztg" customClass="AlbumDetail" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yEu-dm-3hw"/>
+                        <viewControllerLayoutGuide type="bottom" id="mQS-Ks-50C"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jIX-3B-uzI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="438"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qxf-5Q-CaL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2400" y="528"/>
         </scene>
         <!--Best New Albums View Controller-->
         <scene sceneID="wcu-Oa-EDG">
