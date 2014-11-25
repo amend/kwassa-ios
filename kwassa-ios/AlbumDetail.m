@@ -12,6 +12,8 @@
 #import <Spotify/Spotify.h>
 #include "AppDelegate.h"
 
+#import "UIImageView+WebCache.h"
+
 
 @interface AlbumDetail ()
 
@@ -99,6 +101,12 @@ NSMutableArray *tracks;
 }
 
 -(void)setUpTableView {
+    NSString *url = self.coverUrl;
+    [self.coverImageView sd_setImageWithURL:[NSURL URLWithString:url]];
+
+    self.artistAlbumLabel.text = [NSString stringWithFormat:@"%@ - %@", self.artist, self.album];
+    self.scoreLabel.text = self.score;
+    
     [self.tracksTableView reloadData];
 }
 

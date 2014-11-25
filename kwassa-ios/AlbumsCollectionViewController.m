@@ -128,6 +128,8 @@ NSArray *albumArtworkUrls;
         AlbumDetail *albumDetail = [segue destinationViewController];
         albumDetail.artist = albumReviews[indexPath.row][@"artist"];
         albumDetail.album = albumReviews[indexPath.row][@"album"];
+        albumDetail.score = albumReviews[indexPath.row][@"score"];
+        albumDetail.coverUrl = albumArtworkUrls[indexPath.row];
     }
 }
 

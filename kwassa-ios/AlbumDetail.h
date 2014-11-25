@@ -12,6 +12,15 @@
 
 @property (weak, nonatomic) NSString* artist;
 @property (weak, nonatomic) NSString* album;
+@property (weak, nonatomic) NSString* score;
+@property (weak, nonatomic) NSString* coverUrl;
+
+
+@property (weak, nonatomic) IBOutlet UIImageView *coverImageView;
+
+@property (weak, nonatomic) IBOutlet UILabel *artistAlbumLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 
 @property (weak, nonatomic) IBOutlet UITableView *tracksTableView;
 
