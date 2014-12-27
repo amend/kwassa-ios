@@ -141,4 +141,41 @@ NSMutableArray *tracks;
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    SPTPartialTrack* track = [tracks objectAtIndex:indexPath.row];
+    
+    [self playTrack:track.uri usingSession:session];
+}
+
+-(void)playTrack:(NSURL *)trackUri usingSession:(SPTSession *)session {
+    // Create a new player if needed
+    if (player == nil) {
+        player = [SPTAudioStreamingController new];
+    }
+    
+    [player loginWithSession:session callback:^(NSError *error) {
+        
+        if (error != nil) {
+            NSLog(@"*** Enabling playback got error: %@", error);
+            return;
+        }
+        
+        [SPTRequest requestItemAtURI:[NSURL URLWithString:[trackUri absoluteString]]
+                         withSession:nil
+                            callback:^(NSError *error, SPTAlbum *album) {
+                                
+                                if (error != nil) {
+                                    NSLog(@"*** Album lookup got error %@", error);
+                                    return;
+                                }
+                                [player playTrackProvider:album callback:nil];
+                                
+                                
+                            }];
+    }];
+    
+}
+
+
+
 @end
