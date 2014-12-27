@@ -177,5 +177,8 @@ NSMutableArray *tracks;
 }
 
 
+-(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue {
+    NSLog(@"perparing to unwind segue");
+}
 
 @end

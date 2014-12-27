@@ -24,5 +24,4 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tracksTableView;
 
-
 @end

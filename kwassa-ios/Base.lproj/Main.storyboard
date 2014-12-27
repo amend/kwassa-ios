@@ -271,12 +271,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNS-nv-qdd">
-                                <rect key="frame" x="32" y="34" width="30" height="30"/>
+                                <rect key="frame" x="62" y="34" width="85" height="30"/>
                                 <state key="normal" title="X">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="gwl-n4-Bzq" kind="show" id="RCC-nY-DJs"/>
+                                    <segue destination="2tU-dE-J5a" kind="unwind" unwindAction="prepareForUnwind:" id="Fpq-He-kfq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -290,6 +290,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qxf-5Q-CaL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="2tU-dE-J5a" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2486" y="592"/>
         </scene>
@@ -302,7 +303,7 @@
                         <viewControllerLayoutGuide type="bottom" id="dGu-d5-UYF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="SsI-Xy-9Mq">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="438"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XD7-Wy-8np">
@@ -312,7 +313,7 @@
                                 </constraints>
                             </pickerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mk0-Kp-bpN">
-                                <rect key="frame" x="0.0" y="162" width="600" height="276"/>
+                                <rect key="frame" x="0.0" y="162" width="600" height="438"/>
                                 <connections>
                                     <segue destination="c9Y-ow-SWR" kind="embed" id="K38-SA-Y6S"/>
                                 </connections>
