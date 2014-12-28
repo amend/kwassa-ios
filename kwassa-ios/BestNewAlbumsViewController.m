@@ -27,6 +27,7 @@ NSString* yearSelected;
     years = [NSArray arrayWithObjects:@"2014", @"2013", @"2012", @"2011", @"2010", @"2009", @"2008", @"2007", @"2006", @"2005", @"2004", @"2003", nil];
     
     yearSelected = @"2014";
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -72,10 +73,6 @@ NSString* yearSelected;
     AlbumsCollectionViewController* albumsCollectionViewController = self.childViewControllers[0];
     [albumsCollectionViewController setReviewInfo:yearSelected];
     [albumsCollectionViewController.collectionView reloadData];
-}
-
--(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue {
-    NSLog(@"perparing to unwind segue");
 }
 
 @end
