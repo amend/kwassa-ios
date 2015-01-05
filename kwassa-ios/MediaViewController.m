@@ -7,6 +7,7 @@
 //
 
 #import "MediaViewController.h"
+#import "AudioServices.h"
 
 @interface MediaViewController ()
 
@@ -14,9 +15,15 @@
 
 @implementation MediaViewController
 
+AudioServices* audioServices;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    audioServices = [AudioServices sharedInstance];
+    
+    NSLog(@"***** exiting viewDidLoad for MediaViewController *****");
 }
 
 - (void)didReceiveMemoryWarning {

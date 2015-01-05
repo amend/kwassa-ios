@@ -27,7 +27,6 @@ NSString* yearSelected;
     years = [NSArray arrayWithObjects:@"2014", @"2013", @"2012", @"2011", @"2010", @"2009", @"2008", @"2007", @"2006", @"2005", @"2004", @"2003", nil];
     
     yearSelected = @"2014";
-    
 }
 
 - (void)didReceiveMemoryWarning {

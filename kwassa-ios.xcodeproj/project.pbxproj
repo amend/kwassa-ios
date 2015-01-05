@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		904360641A1AE13600327FFF /* AlbumDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 904360631A1AE13600327FFF /* AlbumDetail.m */; };
 		904E687B1A1AA51700E34369 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 904E687A1A1AA51700E34369 /* ImageIO.framework */; };
+		906126261A5782E1007CB337 /* AudioServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 906126251A5782E1007CB337 /* AudioServices.m */; };
 		908D8A9D19E4B500004C1DB6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 908D8A9C19E4B500004C1DB6 /* main.m */; };
 		908D8AA019E4B500004C1DB6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 908D8A9F19E4B500004C1DB6 /* AppDelegate.m */; };
 		908D8AA319E4B500004C1DB6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 908D8AA219E4B500004C1DB6 /* ViewController.m */; };
@@ -55,6 +56,8 @@
 		904360621A1AE13600327FFF /* AlbumDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumDetail.h; sourceTree = "<group>"; };
 		904360631A1AE13600327FFF /* AlbumDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumDetail.m; sourceTree = "<group>"; };
 		904E687A1A1AA51700E34369 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		906126241A5782E1007CB337 /* AudioServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioServices.h; sourceTree = "<group>"; };
+		906126251A5782E1007CB337 /* AudioServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioServices.m; sourceTree = "<group>"; };
 		908D8A9719E4B500004C1DB6 /* kwassa-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "kwassa-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		908D8A9B19E4B500004C1DB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		908D8A9C19E4B500004C1DB6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -181,6 +184,8 @@
 				904360631A1AE13600327FFF /* AlbumDetail.m */,
 				90DAB4341A50C79B00A86304 /* MediaViewController.h */,
 				90DAB4351A50C79B00A86304 /* MediaViewController.m */,
+				906126241A5782E1007CB337 /* AudioServices.h */,
+				906126251A5782E1007CB337 /* AudioServices.m */,
 			);
 			path = "kwassa-ios";
 			sourceTree = "<group>";
@@ -356,6 +361,7 @@
 				9092E09A1A1AC24E004C913F /* UIImage+GIF.m in Sources */,
 				9092E0931A1AC24E004C913F /* SDWebImageCompat.m in Sources */,
 				9092E0991A1AC24E004C913F /* UIButton+WebCache.m in Sources */,
+				906126261A5782E1007CB337 /* AudioServices.m in Sources */,
 				90DAB4361A50C79B00A86304 /* MediaViewController.m in Sources */,
 				9092E09B1A1AC24E004C913F /* UIImage+MultiFormat.m in Sources */,
 				9092E0981A1AC24E004C913F /* SDWebImagePrefetcher.m in Sources */,
