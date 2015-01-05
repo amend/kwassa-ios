@@ -8,7 +8,13 @@
 
 #import "AudioServices.h"
 
+#import <Spotify/Spotify.h>
+#include "AppDelegate.h"
+
 @implementation AudioServices
+
+SPTSession *session;
+SPTAudioStreamingController *player;
 
 + (AudioServices*)sharedInstance
 {
@@ -23,6 +29,38 @@
         _sharedInstance = [[AudioServices alloc] init];
     });
     return _sharedInstance;
+}
+
+-(void)playTrack:(NSURL *)trackUri usingSession:(SPTSession *)session {
+    
+    NSLog(@"in AudioServices playTrack");
+    
+    // Create a new player if needed
+    if (player == nil) {
+        player = [SPTAudioStreamingController new];
+    }
+    
+    [player loginWithSession:session callback:^(NSError *error) {
+        
+        if (error != nil) {
+            NSLog(@"*** Enabling playback got error: %@", error);
+            return;
+        }
+        
+        [SPTRequest requestItemAtURI:[NSURL URLWithString:[trackUri absoluteString]]
+                         withSession:nil
+                            callback:^(NSError *error, SPTAlbum *album) {
+                                
+                                if (error != nil) {
+                                    NSLog(@"*** Album lookup got error %@", error);
+                                    return;
+                                }
+                                [player playTrackProvider:album callback:nil];
+                                
+                                
+                            }];
+    }];
+    
 }
 
 @end

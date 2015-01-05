@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Spotify/Spotify.h>
 
 @interface MediaViewController : UIViewController
 
 - (IBAction)playSong:(id)sender;
+
+- (void)playTrack:(NSURL *)trackUri usingSession:(SPTSession *)session;
 
 @end

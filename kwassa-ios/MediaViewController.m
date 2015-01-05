@@ -22,8 +22,6 @@ AudioServices* audioServices;
     // Do any additional setup after loading the view.
     
     audioServices = [AudioServices sharedInstance];
-    
-    NSLog(@"***** exiting viewDidLoad for MediaViewController *****");
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,7 +40,13 @@ AudioServices* audioServices;
 */
 
 - (IBAction)playSong:(id)sender {
-    NSLog(@"in playSong");
+    NSLog(@"in playSong, should play/pause");
+}
+
+- (void)playTrack:(NSURL *)trackUri usingSession:(SPTSession *)session {
+    NSLog(@"in MediaViewController playTrack");
+    
+    [audioServices playTrack:trackUri usingSession:session];
 }
 
 @end

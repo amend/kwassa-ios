@@ -7,9 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Spotify/Spotify.h>
 
 @interface AudioServices : NSObject
 
 +(AudioServices*)sharedInstance;
+
+-(void)playTrack:(NSURL *)trackUri usingSession:(SPTSession *)session;
 
 @end
