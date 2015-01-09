@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gwl-n4-Bzq">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -82,13 +81,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VlF-6x-u2w">
+                                <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
+                                <state key="normal" title="&lt;&lt;">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pHe-jg-ALc">
+                                <rect key="frame" x="400" y="0.0" width="200" height="50"/>
+                                <state key="normal" title="&gt;&gt;">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XfA-R1-og4">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="137"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="XfA-R1-og4" secondAttribute="height" multiplier="600:137" id="Zy2-kR-iHb"/>
-                                    <constraint firstAttribute="width" constant="600" id="vrT-kg-tHx"/>
-                                </constraints>
-                                <state key="normal" title="Play">
+                                <rect key="frame" x="200" y="0.0" width="200" height="50"/>
+                                <state key="normal" title="&gt;">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -98,8 +105,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="XfA-R1-og4" firstAttribute="top" secondItem="KZ1-qp-Ehb" secondAttribute="bottom" id="Emi-4f-jpf"/>
-                            <constraint firstItem="XfA-R1-og4" firstAttribute="leading" secondItem="Dzu-DI-GM6" secondAttribute="leading" id="GLQ-5k-77O"/>
+                            <constraint firstItem="XfA-R1-og4" firstAttribute="width" secondItem="VlF-6x-u2w" secondAttribute="width" id="3A1-C7-pmn"/>
+                            <constraint firstItem="XfA-R1-og4" firstAttribute="leading" secondItem="VlF-6x-u2w" secondAttribute="trailing" id="B26-Tw-0n5"/>
+                            <constraint firstItem="pHe-jg-ALc" firstAttribute="width" secondItem="XfA-R1-og4" secondAttribute="width" id="CTj-u2-WcG"/>
+                            <constraint firstItem="pHe-jg-ALc" firstAttribute="leading" secondItem="XfA-R1-og4" secondAttribute="trailing" id="UyB-AJ-iLM"/>
+                            <constraint firstItem="XfA-R1-og4" firstAttribute="top" secondItem="Dzu-DI-GM6" secondAttribute="topMargin" id="YGU-vo-wsc"/>
+                            <constraint firstItem="pHe-jg-ALc" firstAttribute="leading" secondItem="XfA-R1-og4" secondAttribute="trailing" id="YZf-nt-2y1"/>
+                            <constraint firstItem="VlF-6x-u2w" firstAttribute="leading" secondItem="Dzu-DI-GM6" secondAttribute="leadingMargin" constant="-16" id="ZVr-OK-TPd"/>
+                            <constraint firstItem="tvO-8n-egr" firstAttribute="top" secondItem="VlF-6x-u2w" secondAttribute="bottom" id="dws-EV-Na7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pHe-jg-ALc" secondAttribute="trailing" constant="-16" id="eBe-5w-lqS"/>
+                            <constraint firstItem="pHe-jg-ALc" firstAttribute="top" secondItem="KZ1-qp-Ehb" secondAttribute="bottom" id="ikR-YH-hfk"/>
+                            <constraint firstItem="tvO-8n-egr" firstAttribute="top" secondItem="XfA-R1-og4" secondAttribute="bottom" id="oPE-dC-5jr"/>
+                            <constraint firstItem="VlF-6x-u2w" firstAttribute="top" secondItem="KZ1-qp-Ehb" secondAttribute="bottom" id="q96-4L-XA6"/>
+                            <constraint firstItem="tvO-8n-egr" firstAttribute="top" secondItem="pHe-jg-ALc" secondAttribute="bottom" id="s0X-aG-p2J"/>
+                            <constraint firstItem="pHe-jg-ALc" firstAttribute="width" secondItem="VlF-6x-u2w" secondAttribute="width" id="w0H-Qj-Tdu"/>
+                            <constraint firstAttribute="centerX" secondItem="XfA-R1-og4" secondAttribute="centerX" id="yHk-Rr-As2"/>
+                            <constraint firstItem="XfA-R1-og4" firstAttribute="leading" secondItem="VlF-6x-u2w" secondAttribute="trailing" id="zaJ-e6-L9C"/>
                         </constraints>
                     </view>
                 </viewController>
