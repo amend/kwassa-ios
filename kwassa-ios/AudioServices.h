@@ -13,6 +13,12 @@
 
 +(AudioServices*)sharedInstance;
 
+-(void)playPauseTrack;
+
+-(void)previousTrack;
+
+-(void)nextTrack;
+
 -(void)playTrack:(NSURL *)trackUri usingSession:(SPTSession *)session;
 
 @end

@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		904360641A1AE13600327FFF /* AlbumDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 904360631A1AE13600327FFF /* AlbumDetail.m */; };
+		9045861D1A60E338006D13A0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9045861C1A60E338006D13A0 /* ViewController.m */; };
 		904E687B1A1AA51700E34369 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 904E687A1A1AA51700E34369 /* ImageIO.framework */; };
 		906126261A5782E1007CB337 /* AudioServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 906126251A5782E1007CB337 /* AudioServices.m */; };
 		908D8A9D19E4B500004C1DB6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 908D8A9C19E4B500004C1DB6 /* main.m */; };
 		908D8AA019E4B500004C1DB6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 908D8A9F19E4B500004C1DB6 /* AppDelegate.m */; };
-		908D8AA319E4B500004C1DB6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 908D8AA219E4B500004C1DB6 /* ViewController.m */; };
 		908D8AA619E4B500004C1DB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 908D8AA419E4B500004C1DB6 /* Main.storyboard */; };
 		908D8AA819E4B500004C1DB6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 908D8AA719E4B500004C1DB6 /* Images.xcassets */; };
 		908D8AAB19E4B500004C1DB6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 908D8AA919E4B500004C1DB6 /* LaunchScreen.xib */; };
@@ -55,6 +55,8 @@
 /* Begin PBXFileReference section */
 		904360621A1AE13600327FFF /* AlbumDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumDetail.h; sourceTree = "<group>"; };
 		904360631A1AE13600327FFF /* AlbumDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumDetail.m; sourceTree = "<group>"; };
+		9045861B1A60E338006D13A0 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9045861C1A60E338006D13A0 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		904E687A1A1AA51700E34369 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		906126241A5782E1007CB337 /* AudioServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioServices.h; sourceTree = "<group>"; };
 		906126251A5782E1007CB337 /* AudioServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioServices.m; sourceTree = "<group>"; };
@@ -63,8 +65,6 @@
 		908D8A9C19E4B500004C1DB6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		908D8A9E19E4B500004C1DB6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		908D8A9F19E4B500004C1DB6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		908D8AA119E4B500004C1DB6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		908D8AA219E4B500004C1DB6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		908D8AA519E4B500004C1DB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		908D8AA719E4B500004C1DB6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		908D8AAA19E4B500004C1DB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -166,8 +166,8 @@
 			children = (
 				908D8A9E19E4B500004C1DB6 /* AppDelegate.h */,
 				908D8A9F19E4B500004C1DB6 /* AppDelegate.m */,
-				908D8AA119E4B500004C1DB6 /* ViewController.h */,
-				908D8AA219E4B500004C1DB6 /* ViewController.m */,
+				9045861B1A60E338006D13A0 /* ViewController.h */,
+				9045861C1A60E338006D13A0 /* ViewController.m */,
 				908D8AA419E4B500004C1DB6 /* Main.storyboard */,
 				908D8AA719E4B500004C1DB6 /* Images.xcassets */,
 				908D8AA919E4B500004C1DB6 /* LaunchScreen.xib */,
@@ -363,6 +363,7 @@
 				9092E0991A1AC24E004C913F /* UIButton+WebCache.m in Sources */,
 				906126261A5782E1007CB337 /* AudioServices.m in Sources */,
 				90DAB4361A50C79B00A86304 /* MediaViewController.m in Sources */,
+				9045861D1A60E338006D13A0 /* ViewController.m in Sources */,
 				9092E09B1A1AC24E004C913F /* UIImage+MultiFormat.m in Sources */,
 				9092E0981A1AC24E004C913F /* SDWebImagePrefetcher.m in Sources */,
 				90EBE25919ECBB2900528C11 /* AlbumsCollectionViewController.m in Sources */,
@@ -373,7 +374,6 @@
 				9092E0961A1AC24E004C913F /* SDWebImageDownloaderOperation.m in Sources */,
 				904360641A1AE13600327FFF /* AlbumDetail.m in Sources */,
 				9092E0941A1AC24E004C913F /* SDWebImageDecoder.m in Sources */,
-				908D8AA319E4B500004C1DB6 /* ViewController.m in Sources */,
 				9092E09D1A1AC24E004C913F /* UIImageView+HighlightedWebCache.m in Sources */,
 				9092E0911A1AC24E004C913F /* NSData+ImageContentType.m in Sources */,
 				9092E0951A1AC24E004C913F /* SDWebImageDownloader.m in Sources */,

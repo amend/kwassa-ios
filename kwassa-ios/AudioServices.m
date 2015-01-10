@@ -13,7 +13,7 @@
 
 @implementation AudioServices
 
-SPTSession *session;
+SPTSession *sptSession;
 SPTAudioStreamingController *player;
 
 + (AudioServices*)sharedInstance
@@ -31,9 +31,52 @@ SPTAudioStreamingController *player;
     return _sharedInstance;
 }
 
--(void)playTrack:(NSURL *)trackUri usingSession:(SPTSession *)session {
+-(void)playPauseTrack {
+    NSLog(@"in AudioServices playPauseTrack");
     
+    BOOL playingStatus = !player.isPlaying;
+    
+    [player setIsPlaying:playingStatus callback:^(NSError *error) {
+        
+        if (error != nil) {
+            NSLog(@"*** setIsPlaying got error: %@", error);
+            return;
+        }
+
+    }];
+}
+
+-(void)previousTrack {
+    NSLog(@"in AudioServices previousTrack");
+    
+    [player skipPrevious:^(NSError *error) {
+        
+        if (error != nil) {
+            NSLog(@"*** previousTrack got error: %@", error);
+            return;
+        }
+        
+    }];
+}
+
+-(void)nextTrack {
+    NSLog(@"in AudioServices nextTrack");
+    
+    [player skipNext:^(NSError *error) {
+        
+        if (error != nil) {
+            NSLog(@"*** nextTrack got error: %@", error);
+            return;
+        }
+        
+    }];
+
+}
+
+-(void)playTrack:(NSURL *)trackUri usingSession:(SPTSession *)session {
     NSLog(@"in AudioServices playTrack");
+    
+    sptSession = session;
     
     // Create a new player if needed
     if (player == nil) {

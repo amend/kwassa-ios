@@ -39,8 +39,24 @@ AudioServices* audioServices;
 }
 */
 
-- (IBAction)playSong:(id)sender {
+- (IBAction)playPauseTrackButton:(id)sender {
     NSLog(@"in playSong, should play/pause");
+    
+    [audioServices playPauseTrack];
+}
+
+- (IBAction)previousTrackButton:(id)sender {
+    NSLog(@"in previousSongButton, should play previous track");
+    // check if prev track exists
+    
+    [audioServices previousTrack];
+}
+
+- (IBAction)nextTrackButton:(id)sender {
+    NSLog(@"in nextSongButton, should play next track");
+    // play first track if last track
+    
+    [audioServices nextTrack];
 }
 
 - (void)playTrack:(NSURL *)trackUri usingSession:(SPTSession *)session {

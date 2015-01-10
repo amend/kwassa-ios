@@ -7,13 +7,8 @@
 //
 
 #import "ViewController.h"
-#import <Spotify/Spotify.h>
-#include "AppDelegate.h"
-#include "ReviewsServices.h"
 
 @interface ViewController ()
-
-@property (strong, nonatomic) ReviewsServices *reviewsServices;
 
 @end
 

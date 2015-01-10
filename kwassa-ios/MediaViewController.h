@@ -11,7 +11,11 @@
 
 @interface MediaViewController : UIViewController
 
-- (IBAction)playSong:(id)sender;
+- (IBAction)playPauseTrackButton:(id)sender;
+
+- (IBAction)previousTrackButton:(id)sender;
+
+- (IBAction)nextTrackButton:(id)sender;
 
 - (void)playTrack:(NSURL *)trackUri usingSession:(SPTSession *)session;
 
