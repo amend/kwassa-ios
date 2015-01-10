@@ -100,10 +100,59 @@ SPTAudioStreamingController *player;
                                 }
                                 [player playTrackProvider:album callback:nil];
                                 
+                            }];
+    }];
+}
+
+-(void)trackSelected:(NSUInteger)trackNum album:(SPTAlbum *)album usingSession:(SPTSession *)session {
+    NSLog(@"in AudioServices trackSelected");
+    
+    sptSession = session;
+    
+    // Create a new player if needed
+    if (player == nil) {
+        player = [SPTAudioStreamingController new];
+    }
+    
+    [player loginWithSession:session callback:^(NSError *error) {
+        
+        if (error != nil) {
+            NSLog(@"*** Enabling playback got error: %@", error);
+            return;
+        }
+        
+        [player playTrackProvider:album fromIndex:(int)trackNum callback:^(NSError *error) {
+            
+            if (error != nil) {
+                NSLog(@"*** Enabling playback got error: %@", error);
+                return;
+            }
+            
+        }];
+        
+    }];
+    
+    /*
+    [player loginWithSession:session callback:^(NSError *error) {
+        
+        if (error != nil) {
+            NSLog(@"*** Enabling playback got error: %@", error);
+            return;
+        }
+        
+        [SPTRequest requestItemAtURI:[NSURL URLWithString:[trackUri absoluteString]]
+                         withSession:nil
+                            callback:^(NSError *error, SPTAlbum *album) {
+                                
+                                if (error != nil) {
+                                    NSLog(@"*** Album lookup got error %@", error);
+                                    return;
+                                }
+                                [player playTrackProvider:album callback:nil];
                                 
                             }];
     }];
-    
+     */
 }
 
 @end

@@ -146,7 +146,10 @@ NSMutableArray *tracks;
     SPTPartialTrack* track = [tracks objectAtIndex:indexPath.row];
     
     MediaViewController* mediaViewController = self.childViewControllers[0];
-    [mediaViewController playTrack:track.uri usingSession:session];
+    
+    //[mediaViewController playTrack:track.uri usingSession:session];
+    [mediaViewController trackSelected:indexPath.row album:sptAlbum usingSession:session];
+    
 }
 
 @end

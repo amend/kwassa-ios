@@ -21,4 +21,6 @@
 
 -(void)playTrack:(NSURL *)trackUri usingSession:(SPTSession *)session;
 
+-(void)trackSelected:(NSUInteger)trackNum album:(SPTAlbum *)album  usingSession:(SPTSession *)session;
+
 @end
