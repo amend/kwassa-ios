@@ -71,7 +71,13 @@ NSString* yearSelected;
 - (IBAction)updateYear:(id)sender {
     AlbumsCollectionViewController* albumsCollectionViewController = self.childViewControllers[0];
     [albumsCollectionViewController setReviewInfo:yearSelected];
+    
+    [albumsCollectionViewController.collectionView setContentOffset:CGPointZero animated:NO];
+    
     [albumsCollectionViewController.collectionView reloadData];
+    
+    //[albumsCollectionViewController.collectionView setContentOffset:CGPointZero animated:YES];
+
 }
 
 @end
