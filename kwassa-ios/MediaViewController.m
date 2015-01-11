@@ -59,12 +59,6 @@ AudioServices* audioServices;
     [audioServices nextTrack];
 }
 
-- (void)playTrack:(NSURL *)trackUri usingSession:(SPTSession *)session {
-    NSLog(@"in MediaViewController playTrack");
-    
-    [audioServices playTrack:trackUri usingSession:session];
-}
-
 - (void)trackSelected:(NSUInteger)trackNum album:(SPTAlbum *)album  usingSession:(SPTSession *)session {
     NSLog(@"in MediaViewController playTrack");
     

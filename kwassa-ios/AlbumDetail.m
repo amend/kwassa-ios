@@ -143,8 +143,6 @@ NSMutableArray *tracks;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    SPTPartialTrack* track = [tracks objectAtIndex:indexPath.row];
-    
     MediaViewController* mediaViewController = self.childViewControllers[0];
     
     //[mediaViewController playTrack:track.uri usingSession:session];

@@ -16,6 +16,8 @@
 SPTSession *sptSession;
 SPTAudioStreamingController *player;
 
+NSDate *prevLastPressed;
+
 + (AudioServices*)sharedInstance
 {
     // 1
@@ -34,29 +36,43 @@ SPTAudioStreamingController *player;
 -(void)playPauseTrack {
     NSLog(@"in AudioServices playPauseTrack");
     
-    BOOL playingStatus = !player.isPlaying;
-    
-    [player setIsPlaying:playingStatus callback:^(NSError *error) {
+    [player setIsPlaying:!player.isPlaying callback:^(NSError *error) {
         
         if (error != nil) {
             NSLog(@"*** setIsPlaying got error: %@", error);
             return;
         }
-
     }];
 }
 
 -(void)previousTrack {
     NSLog(@"in AudioServices previousTrack");
     
-    [player skipPrevious:^(NSError *error) {
+    NSDate *now = [NSDate date];
+    NSTimeInterval diff = [now timeIntervalSinceDate:prevLastPressed];
+    prevLastPressed = [NSDate date];
+    
+    if(diff > 1) {
+        NSLog(@"restarting track");
+        [player seekToOffset:0 callback:^(NSError *error) {
+
+            if (error != nil) {
+                NSLog(@"*** previousTrack seekToOffset got error: %@", error);
+                return;
+            }
+
+        }];
+    } else {
+        NSLog(@"skipping to previous track");
         
-        if (error != nil) {
-            NSLog(@"*** previousTrack got error: %@", error);
-            return;
-        }
+        [player skipPrevious:^(NSError *error) {
         
-    }];
+            if (error != nil) {
+                NSLog(@"*** previousTrack skipPrevious got error: %@", error);
+                return;
+            }
+        }];
+    }
 }
 
 -(void)nextTrack {
@@ -73,41 +89,12 @@ SPTAudioStreamingController *player;
 
 }
 
--(void)playTrack:(NSURL *)trackUri usingSession:(SPTSession *)session {
-    NSLog(@"in AudioServices playTrack");
-    
-    sptSession = session;
-    
-    // Create a new player if needed
-    if (player == nil) {
-        player = [SPTAudioStreamingController new];
-    }
-    
-    [player loginWithSession:session callback:^(NSError *error) {
-        
-        if (error != nil) {
-            NSLog(@"*** Enabling playback got error: %@", error);
-            return;
-        }
-        
-        [SPTRequest requestItemAtURI:[NSURL URLWithString:[trackUri absoluteString]]
-                         withSession:nil
-                            callback:^(NSError *error, SPTAlbum *album) {
-                                
-                                if (error != nil) {
-                                    NSLog(@"*** Album lookup got error %@", error);
-                                    return;
-                                }
-                                [player playTrackProvider:album callback:nil];
-                                
-                            }];
-    }];
-}
-
 -(void)trackSelected:(NSUInteger)trackNum album:(SPTAlbum *)album usingSession:(SPTSession *)session {
     NSLog(@"in AudioServices trackSelected");
     
+    
     sptSession = session;
+    prevLastPressed = [NSDate date];
     
     // Create a new player if needed
     if (player == nil) {
@@ -131,28 +118,6 @@ SPTAudioStreamingController *player;
         }];
         
     }];
-    
-    /*
-    [player loginWithSession:session callback:^(NSError *error) {
-        
-        if (error != nil) {
-            NSLog(@"*** Enabling playback got error: %@", error);
-            return;
-        }
-        
-        [SPTRequest requestItemAtURI:[NSURL URLWithString:[trackUri absoluteString]]
-                         withSession:nil
-                            callback:^(NSError *error, SPTAlbum *album) {
-                                
-                                if (error != nil) {
-                                    NSLog(@"*** Album lookup got error %@", error);
-                                    return;
-                                }
-                                [player playTrackProvider:album callback:nil];
-                                
-                            }];
-    }];
-     */
 }
 
 @end
