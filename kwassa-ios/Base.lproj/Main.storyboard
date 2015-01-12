@@ -163,16 +163,6 @@
                                     <constraint firstAttribute="width" constant="125" id="YOy-Jw-m8m"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Artist - Album" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ReW-Zg-k0f">
-                                <rect key="frame" x="200" y="155" width="200" height="26"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="AOz-PP-KY6"/>
-                                    <constraint firstAttribute="height" constant="26" id="y8D-kH-QG7"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNS-nv-qdd">
                                 <rect key="frame" x="16" y="20" width="30" height="30"/>
                                 <state key="normal" title="X">
@@ -195,6 +185,16 @@
                                 <rect key="frame" x="0.0" y="216" width="600" height="19"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="Artist - Album" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ReW-Zg-k0f">
+                                <rect key="frame" x="188" y="157" width="225" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="225" id="tMa-Of-9bV"/>
+                                    <constraint firstAttribute="height" constant="26" id="y8D-kH-QG7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
