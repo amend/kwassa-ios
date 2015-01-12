@@ -11,7 +11,7 @@
 #import <Spotify/Spotify.h>
 #include "AppDelegate.h"
 
-#import "UIImageView+WebCache.h"
+#import "SDWebImage/UIImageView+WebCache.h"
 
 #import "MediaViewController.h"
 #import "ReviewsServices.h"

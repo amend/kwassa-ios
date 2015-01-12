@@ -92,7 +92,6 @@ NSDate *prevLastPressed;
 -(void)trackSelected:(NSUInteger)trackNum album:(SPTAlbum *)album usingSession:(SPTSession *)session {
     NSLog(@"in AudioServices trackSelected");
     
-    
     sptSession = session;
     prevLastPressed = [NSDate date];
     
