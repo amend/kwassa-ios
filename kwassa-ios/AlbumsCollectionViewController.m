@@ -80,43 +80,7 @@ NSArray *albumArtworkUrls;
     return cell;
 }
 
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    /*
-    AlbumCell *cell = (AlbumCell *)[collectionView cellForItemAtIndexPath:indexPath];
-    
-    albumSelected = cell.album.text;
-    NSLog(@"*** gonna perform segue with albumSelected: %@", albumSelected);
-    NSLog(@"*** gonna perform segue with cell.album.text: %@", cell.album.text);
-    [self performSegueWithIdentifier:@"showAlbumDetail" sender:nil];
-     */
-    
-    /*
-    if (session == nil) {
-        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        session = appDelegate.session;
-    }
-    
-    [SPTRequest performSearchWithQuery:albumReviews[indexPath.row][@"album"]
-                             queryType:SPTQueryTypeAlbum
-                                offset:0 session:session
-                              callback:^(NSError *error, SPTListPage *listPage) {
-                                  
-                                  NSURL *albumUri;
-                                  if (listPage.totalListLength > 0) {
-                                      NSLog(@"listPage.items count: %lu", (unsigned long)listPage.items.count);
-                                      SPTPartialAlbum *album = listPage.items[0];
-                                      albumUri = album.uri;
-                                      NSLog(@"uri: %@", albumUri);
-                                  }
-                                  
-                                  if (session == nil) {
-                                      AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-                                      session = appDelegate.session;
-                                  }
-                                  
-                                  [self playAlbum:albumUri usingSession:session];
-                              }];
-     */
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
 }
 
