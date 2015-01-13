@@ -5,10 +5,5 @@ Listen to albums from Pitchfork's Best New Albums. You can browse by year and ch
 
 Album data collected using https://github.com/amend/pitchfork-scrapy and hosted on aws with https://github.com/amend/kwassa_backend
 
-<img src="http://i.imgur.com/NNxOfyy.png" alt="Drawing" style="width: 50%;"/>
-
-<img src="http://i.imgur.com/70zAOBg.png" alt="Drawing" style="width: 50%;"/>
-
-![Alt text](http://i.imgur.com/NNxOfyy.png)
-
-![Alt text](http://i.imgur.com/70zAOBg.png)
+<img src="http://i.imgur.com/NNxOfyy.png" align="left" height="500" width="281" >
+<img src="http://i.imgur.com/70zAOBg.png" align="right" height="500" width="281" >
